@@ -10,7 +10,15 @@
 </head>
 <body>
 
-    <div class="container">
+    <div class="container input">
+        <div>
+            <label for="start">Stazione di partenza</label>
+            <input type="text" id="start">
+        </div>
+        <div>
+            <label for="end">Stazione di arrivo</label>
+            <input type="text" id="end">
+        </div>
         <div>
             <label for="user-name">Come ti chiami?</label>
             <input type="text" id="user-name">
@@ -24,10 +32,32 @@
             <input type="number" id="user-km">
         </div>
     </div>
-
+    <div class="container button-price">
+        <button id="price">Genera biglietto</button>
+    </div>
+    
+    <div class="container">
+        <div class="ticket-red">
+            <h2>Stazione di Partenza</h2>
+            <h4 id="start-station"></h4>
+        </div>
+        <div class="ticket-white">
+            <h2>Stazione di Arrivo</h2>
+            <h4 id="end-station"></h4>
+        </div>
+        <div class="ticket-green">
+            <h4 id="name-user"></h4>
+            <div id="treno">
+                <h3>Treno: <span>Freccia Rossa 9311</span></h3>
+                <h3>Servizio: <span>2° Standard</span></h3>
+                <h3>Carrozza: <span>8</span></h3>
+                <h3>Posti: <span>1a</span></h3>
+            </div>
+            
+        </div>
+    </div>
     <div class="container price">
-        <button id="price">genera biglietto</button>
-        <h1>Prezzo <span id="ticket-price"></span></h1>
+        <span id="ticket-price"></span>
     </div>
     
     <!-- foglio script js -->

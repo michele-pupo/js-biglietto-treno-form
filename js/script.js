@@ -23,6 +23,10 @@
 const buttonElement = document.querySelector("#price");
 const inputAgeElement = document.querySelector("#user-age");
 const inputKmElement = document.querySelector("#user-km");
+const inputStart = document.querySelector("#start");
+const inputEnd = document.querySelector("#end");
+const inputName = document.querySelector("#user-name");
+
 
 // prezzo al chilometro
 const priceForKm = 0.21;
@@ -35,6 +39,13 @@ const percentageOver65 = 40;
 buttonElement.addEventListener('click',
     function(){
 
+        // stazione di partenza
+        document.querySelector("#start-station").innerHTML = inputStart.value + "<br> ore 8.30 - 31/01/2024";
+        // stazione di arrivo
+        document.querySelector("#end-station").innerHTML = inputEnd.value + "<br> ore 15.00 - 31/01/2024";
+        // nome
+        document.querySelector("#name-user").innerHTML = inputName.value;
+
         // calcolo prezzo biglietto intero con doppia cifra dopo la virgola
         const priceToTicket = ((priceForKm * inputKmElement.value).toFixed(2));
 
@@ -43,26 +54,26 @@ buttonElement.addEventListener('click',
         // calcolo sconto over 65
         const discountForOver65 = (((priceToTicket / 100) * percentageOver65));
         
-
+        
         // utente minorenne sconto 20%
         if (inputAgeElement.value < 18){
             // sconto del 20%
             console.log("-20%");
             // calcolo prezzo del biglietto
-            document.querySelector("#ticket-price").innerHTML = `${(priceToTicket - discountForMinors).toFixed(2)} €`;
+            document.querySelector("#ticket-price").innerHTML = `Importo totale: ${(priceToTicket - discountForMinors).toFixed(2)} €`;
 
             // utente con età compresa tra 18 e 65 niente sconto
         } else if (inputAgeElement.value >= 18 && inputAgeElement.value < 65){
             console.log("prezzo intero");
             // calcolo prezzo del biglietto
-            document.querySelector("#ticket-price").innerHTML = `${(priceToTicket)} €`;
+            document.querySelector("#ticket-price").innerHTML = `Importo totale: ${(priceToTicket)} €`;
 
             // utente over 65 sconto 40%
         } else {
             // sconto del 40%
             console.log("-40%");
             // calcolo prezzo del biglietto
-            document.querySelector("#ticket-price").innerHTML = `${(priceToTicket - discountForOver65).toFixed(2)} €`;
+            document.querySelector("#ticket-price").innerHTML = `Importo totale: ${(priceToTicket - discountForOver65).toFixed(2)} €`;
         }
     }
 );
