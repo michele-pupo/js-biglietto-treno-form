@@ -25,12 +25,15 @@ body {
 .button-price{
     background-color: cornflowerblue;
     padding: 50px;
+    margin-top: 10px;
 }
 
 #price{
     padding: 10px;
     font-size: 15px;
     font-weight: bold;
+    border-radius: 20px;
+    border-color: transparent;
 }
 
 .ticket-red{
@@ -40,6 +43,7 @@ body {
     width: 100%;
     color: white;
     padding: 80px 50px;
+    margin-top: 10px;
 }
 
 .ticket-white{
@@ -50,6 +54,7 @@ body {
     border-right: 0px;
     width: 100%;
     padding: 80px 50px;
+    margin-top: 10px;
 }
 
 .ticket-green{
@@ -59,6 +64,7 @@ body {
     width: 100%;
     color: white;
     padding: 60px 50px;
+    margin-top: 10px;
 }
 
 .price{
@@ -76,4 +82,10 @@ body {
 
 #start-station, #end-station, #name-user{
     font-size: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+h2{
+    text-decoration: underline;
 }
